@@ -4,16 +4,16 @@ app = FastAPI()
 
 @app.get("/")
 def read_root():
-    return {"method": "GET"}
+    return {"get": "GET"}
 
 @app.put("/")
 def put():
-    return {"method": "PUT"}
+    return {"put": "PUT"}
 
 @app.post("/")
 def post():
-    return {"method": "POST"}
+    return {"post": "POST"}
 
 @app.delete("/")
 def delete():
-    return {"method": "DELETE"}
+    return {"delete": "DELETE"}
