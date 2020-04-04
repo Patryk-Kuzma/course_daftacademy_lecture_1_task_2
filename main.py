@@ -1,19 +1,33 @@
-from fastapi import FastAPI
+from typing import Dict
+from fastapi import FastAPI, HTTPException
+from pydantic import BaseModel
+
 
 app = FastAPI()
+app.counter = 0
+app.patients = {}
 
-@app.get("/get")
-def read_root():
-    return {"method": "METHOD"}
 
-@app.put("/put")
-def put():
-    return {"put": "PUT"}
+@app.get("/")
+def root():
+    return {"message": "Hello World during the coronavirus pandemic!"}
 
-@app.post("/post")
-def post():
-    return {"post": "POST"}
 
-@app.delete("/delete")
-def delete():
-    return {"delete": "DELETE"}
+@app.get("/method")
+def get_method():
+    return {"method": "GET"}
+
+
+@app.post("/method")
+def post_method():
+    return {"method": "POST"}
+
+
+@app.put("/method")
+def put_method():
+    return {"method": "PUT"}
+
+
+@app.delete("/method")
+def delete_method():
+    return {"method": "DELETE"}
