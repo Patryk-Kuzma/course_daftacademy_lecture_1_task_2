@@ -2,18 +2,18 @@ from fastapi import FastAPI
 
 app = FastAPI()
 
-@app.get("/")
+@app.get("/get")
 def read_root():
     return {"get": "GET"}
 
-@app.put("/")
+@app.put("/put")
 def put():
     return {"put": "PUT"}
 
-@app.post("/")
+@app.post("/post")
 def post():
     return {"post": "POST"}
 
-@app.delete("/")
+@app.delete("/delete")
 def delete():
     return {"delete": "DELETE"}
