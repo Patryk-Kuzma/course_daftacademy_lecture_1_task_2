@@ -4,7 +4,7 @@ app = FastAPI()
 
 @app.get("/get")
 def read_root():
-    return {"get": "GET"}
+    return {"method": "METHOD"}
 
 @app.put("/put")
 def put():
